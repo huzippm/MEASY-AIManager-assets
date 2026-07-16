@@ -1,0 +1,99 @@
+{
+  "apiVersion": "1",
+  "catalogVersion": "20260716-01",
+  "generatedAt": "2026-07-16T00:00:00Z",
+  "demos": [
+    {
+      "id": "yolov8-detect",
+      "name": "YOLOv8 目标检测",
+      "description": "YOLOv8s INT8 NPU 实时目标检测，支持 COCO 80 类。",
+      "category": "目标检测",
+      "output": {"type": "webrtc"},
+      "arguments": {
+        "camera": {"label": "摄像头", "type": "local_camera", "flag": "--camera"},
+        "model": {"type": "static", "flag": "--model", "default": "weights/yolov8s.int.rknn"},
+        "width": {"label": "分辨率", "type": "select", "flag": "--width", "options": ["1920", "1280", "640"], "default": "1920"},
+        "confidence": {"label": "置信度", "type": "range", "flag": "--conf", "min": 0.1, "max": 0.9, "step": 0.05, "default": "0.5"},
+        "labels": {"type": "static", "flag": "--labels", "default": "coco_80_labels_list.txt"},
+        "height": {"type": "static", "flag": "--height", "default": "720"}
+      },
+      "variants": [{
+        "id": "rk3576-rknpu2", "name": "RK3576 板载 NPU",
+        "entrypoint": "yolo_stream",
+        "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"},
+        "files": [
+          {"path": "yolo_stream", "source": "artifacts/rk3576/yolov8-detect/rk3576-rknpu2/yolo_stream", "sha256": "27f82c2756b86fc80cbd3d032cbf5213f8d290bb6cf003ccc63beabdf8bfc83d", "size": 876728, "executable": true},
+          {"path": "weights/yolov8s.int.rknn", "source": "artifacts/rk3576/yolov8-detect/rk3576-rknpu2/weights/yolov8s.int.rknn", "sha256": "8e0990cf1ea8163eaa8391fbdbe895d56a5db435e2f05c80106b39afc62c95f7", "size": 14773717, "executable": false},
+          {"path": "coco_80_labels_list.txt", "source": "artifacts/rk3576/yolov8-detect/rk3576-rknpu2/coco_80_labels_list.txt", "sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a", "size": 621, "executable": false}
+        ]
+      }]
+    },
+    {
+      "id": "yolov8-pose", "name": "YOLOv8 姿态估计",
+      "description": "YOLOv8s-Pose INT8 NPU 人体 17 关键点实时检测。", "category": "姿态估计",
+      "output": {"type": "webrtc"},
+      "arguments": {
+        "camera": {"label": "摄像头", "type": "local_camera", "flag": "--camera"},
+        "model": {"type": "static", "flag": "--model", "default": "weights/yolov8s-pose.int.rknn"},
+        "width": {"label": "分辨率", "type": "select", "flag": "--width", "options": ["1920", "1280", "640"], "default": "1920"},
+        "confidence": {"label": "置信度", "type": "range", "flag": "--conf", "min": 0.1, "max": 0.9, "step": 0.05, "default": "0.5"},
+        "labels": {"type": "static", "flag": "--labels", "default": "pose_1_labels_list.txt"},
+        "height": {"type": "static", "flag": "--height", "default": "720"}
+      },
+      "variants": [{"id": "rk3576-rknpu2", "name": "RK3576 板载 NPU", "entrypoint": "pose_stream", "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"}, "files": [
+        {"path": "pose_stream", "source": "artifacts/rk3576/yolov8-pose/rk3576-rknpu2/pose_stream", "sha256": "f2365419c1819bf591a0d0cfd5c18d9ecf76e69b39070af6f17879d1ae3044d2", "size": 1080376, "executable": true},
+        {"path": "weights/yolov8s-pose.int.rknn", "source": "artifacts/rk3576/yolov8-pose/rk3576-rknpu2/weights/yolov8s-pose.int.rknn", "sha256": "c57e7364711b0d7cc3cf9a1f5c970919dd5dbe51bee6e80c9daffb892eb0106c", "size": 15458473, "executable": false},
+        {"path": "pose_1_labels_list.txt", "source": "artifacts/rk3576/yolov8-pose/rk3576-rknpu2/pose_1_labels_list.txt", "sha256": "38a81e87e79631e602bf5fbd307ce2fcd382b1670c585ea09032aac778a80531", "size": 6, "executable": false}
+      ]}]
+    },
+    {
+      "id": "yolov8-seg", "name": "YOLOv8 实例分割", "description": "YOLOv8s-Seg INT8 NPU 实时实例分割。", "category": "实例分割",
+      "output": {"type": "webrtc"},
+      "arguments": {
+        "camera": {"label": "摄像头", "type": "local_camera", "flag": "--camera"},
+        "model": {"type": "static", "flag": "--model", "default": "weights/yolov8s-seg.int.rknn"},
+        "width": {"label": "分辨率", "type": "select", "flag": "--width", "options": ["1920", "1280", "640"], "default": "1920"},
+        "confidence": {"label": "置信度", "type": "range", "flag": "--conf", "min": 0.1, "max": 0.9, "step": 0.05, "default": "0.5"},
+        "labels": {"type": "static", "flag": "--labels", "default": "coco_80_labels_list.txt"},
+        "height": {"type": "static", "flag": "--height", "default": "720"}
+      },
+      "variants": [{"id": "rk3576-rknpu2", "name": "RK3576 板载 NPU", "entrypoint": "seg_stream", "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"}, "files": [
+        {"path": "seg_stream", "source": "artifacts/rk3576/yolov8-seg/rk3576-rknpu2/seg_stream", "sha256": "78c6b35e8f41428d1e9b6ff57d48d8fdc95b32d6688199cb133fef0cb3402266", "size": 1143544, "executable": true},
+        {"path": "weights/yolov8s-seg.int.rknn", "source": "artifacts/rk3576/yolov8-seg/rk3576-rknpu2/weights/yolov8s-seg.int.rknn", "sha256": "81581b6b3f05ec2af00f38ca0d0e9547e16b0218de7e22fe6ee6e8824759df8b", "size": 15761957, "executable": false},
+        {"path": "coco_80_labels_list.txt", "source": "artifacts/rk3576/yolov8-seg/rk3576-rknpu2/coco_80_labels_list.txt", "sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a", "size": 621, "executable": false}
+      ]}]
+    },
+    {
+      "id": "yolo11-detect", "name": "YOLO11 目标检测", "description": "YOLO11 INT8 NPU 实时目标检测，支持 COCO 80 类。", "category": "目标检测",
+      "output": {"type": "webrtc"},
+      "arguments": {
+        "camera": {"label": "摄像头", "type": "local_camera", "flag": "--camera"},
+        "model": {"type": "static", "flag": "--model", "default": "weights/yolo11s.rknn"},
+        "width": {"label": "分辨率", "type": "select", "flag": "--width", "options": ["1920", "1280", "640"], "default": "1920"},
+        "confidence": {"label": "置信度", "type": "range", "flag": "--conf", "min": 0.1, "max": 0.9, "step": 0.05, "default": "0.5"},
+        "labels": {"type": "static", "flag": "--labels", "default": "coco_80_labels_list.txt"},
+        "height": {"type": "static", "flag": "--height", "default": "720"}
+      },
+      "variants": [{"id": "rk3576-rknpu2", "name": "RK3576 板载 NPU", "entrypoint": "yolo11_stream", "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"}, "files": [
+        {"path": "yolo11_stream", "source": "artifacts/rk3576/yolo11-detect/rk3576-rknpu2/yolo11_stream", "sha256": "e339b35102a4aeace59102a1633e160a231cd3cc5263b14cb3dd3ea9d19eb154", "size": 875184, "executable": true},
+        {"path": "weights/yolo11s.rknn", "source": "artifacts/rk3576/yolo11-detect/rk3576-rknpu2/weights/yolo11s.rknn", "sha256": "ac36cfd9132cfc9e32334b17037bc27ccb896d34e8f7c76440a3fc5b4b14b38c", "size": 14519115, "executable": false},
+        {"path": "coco_80_labels_list.txt", "source": "artifacts/rk3576/yolo11-detect/rk3576-rknpu2/coco_80_labels_list.txt", "sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a", "size": 621, "executable": false}
+      ]}]
+    },
+    {
+      "id": "retinaface-detect", "name": "RetinaFace 人脸检测", "description": "RetinaFace NPU 实时人脸检测。", "category": "人脸检测",
+      "output": {"type": "webrtc"},
+      "arguments": {
+        "camera": {"label": "摄像头", "type": "local_camera", "flag": "--camera"},
+        "model": {"type": "static", "flag": "--model", "default": "weights/RetinaFace.rknn"},
+        "width": {"label": "分辨率", "type": "select", "flag": "--width", "options": ["1920", "1280", "640"], "default": "1920"},
+        "confidence": {"label": "置信度", "type": "range", "flag": "--conf", "min": 0.1, "max": 0.9, "step": 0.05, "default": "0.5"},
+        "height": {"type": "static", "flag": "--height", "default": "720"}
+      },
+      "variants": [{"id": "rk3576-rknpu2", "name": "RK3576 板载 NPU", "entrypoint": "retinaface_stream", "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"}, "files": [
+        {"path": "retinaface_stream", "source": "artifacts/rk3576/retinaface-detect/rk3576-rknpu2/retinaface_stream", "sha256": "d063cf924bad6cba63fb884be292668348f4f2eb3e25f758bccd02e67a19c15a", "size": 1082864, "executable": true},
+        {"path": "weights/RetinaFace.rknn", "source": "artifacts/rk3576/retinaface-detect/rk3576-rknpu2/weights/RetinaFace.rknn", "sha256": "caf90e0935a76e49939f71dde8f41efed5146cfc32da9165a068771a2b2fcb11", "size": 1417059, "executable": false}
+      ]}]
+    }
+  ]
+}
