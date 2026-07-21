@@ -1,7 +1,7 @@
 {
   "apiVersion": "1",
-  "catalogVersion": "20260720-01",
-  "generatedAt": "2026-07-20T13:13:40Z",
+  "catalogVersion": "20260721-01",
+  "generatedAt": "2026-07-21T01:55:22Z",
   "demos": [
     {
       "id": "yolov8-detect",
@@ -22,7 +22,7 @@
         "entrypoint": "yolo_stream",
         "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"},
         "files": [
-          {"path": "yolo_stream", "source": "artifacts/rk3576/yolov8-detect/rk3576-rknpu2/yolo_stream", "sha256": "c71202c71bebc2ee072f1d39f7c3c015682224275dbada11973f480a40ffed03", "size": 248808, "executable": true},
+          {"path": "yolo_stream", "source": "artifacts/rk3576/yolov8-detect/rk3576-rknpu2/yolo_stream", "sha256": "a660866c48eccc125e98ffda8a2bb84ab23cb3861419d5347549bb36a2738fd5", "size": 248808, "executable": true},
           {"path": "weights/yolov8s.int.rknn", "source": "artifacts/rk3576/yolov8-detect/rk3576-rknpu2/weights/yolov8s.int.rknn", "sha256": "8e0990cf1ea8163eaa8391fbdbe895d56a5db435e2f05c80106b39afc62c95f7", "size": 14773717, "executable": false},
           {"path": "coco_80_labels_list.txt", "source": "artifacts/rk3576/yolov8-detect/rk3576-rknpu2/coco_80_labels_list.txt", "sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a", "size": 621, "executable": false}
         ]
@@ -41,7 +41,7 @@
         "height": {"type": "static", "flag": "--height", "default": "720"}
       },
       "variants": [{"id": "rk3576-rknpu2", "name": "RK3576 板载 NPU", "entrypoint": "pose_stream", "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"}, "files": [
-        {"path": "pose_stream", "source": "artifacts/rk3576/yolov8-pose/rk3576-rknpu2/pose_stream", "sha256": "d6b050e4633b5b0d87c98f8ed0c178b937ba8f7d74755af1274d5ad7f5650dc6", "size": 323952, "executable": true},
+        {"path": "pose_stream", "source": "artifacts/rk3576/yolov8-pose/rk3576-rknpu2/pose_stream", "sha256": "b401a649cf4e5b79aa2c7f37a1d64a72708581b27feabc941d4b6ca592519220", "size": 323952, "executable": true},
         {"path": "weights/yolov8s-pose.int.rknn", "source": "artifacts/rk3576/yolov8-pose/rk3576-rknpu2/weights/yolov8s-pose.int.rknn", "sha256": "c57e7364711b0d7cc3cf9a1f5c970919dd5dbe51bee6e80c9daffb892eb0106c", "size": 15458473, "executable": false},
         {"path": "pose_1_labels_list.txt", "source": "artifacts/rk3576/yolov8-pose/rk3576-rknpu2/pose_1_labels_list.txt", "sha256": "38a81e87e79631e602bf5fbd307ce2fcd382b1670c585ea09032aac778a80531", "size": 6, "executable": false}
       ]}]
@@ -58,7 +58,7 @@
         "height": {"type": "static", "flag": "--height", "default": "720"}
       },
       "variants": [{"id": "rk3576-rknpu2", "name": "RK3576 板载 NPU", "entrypoint": "seg_stream", "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"}, "files": [
-        {"path": "seg_stream", "source": "artifacts/rk3576/yolov8-seg/rk3576-rknpu2/seg_stream", "sha256": "6bd63f8f200f33a4b88e85da0df08b4eb7600fdaf6388e72fc2b131479bf20b5", "size": 330832, "executable": true},
+        {"path": "seg_stream", "source": "artifacts/rk3576/yolov8-seg/rk3576-rknpu2/seg_stream", "sha256": "e4003cb3313a2c319a1fd58a3877c3e8c34851eaec2d376b40132740c22a6257", "size": 330832, "executable": true},
         {"path": "weights/yolov8s-seg.int.rknn", "source": "artifacts/rk3576/yolov8-seg/rk3576-rknpu2/weights/yolov8s-seg.int.rknn", "sha256": "81581b6b3f05ec2af00f38ca0d0e9547e16b0218de7e22fe6ee6e8824759df8b", "size": 15761957, "executable": false},
         {"path": "coco_80_labels_list.txt", "source": "artifacts/rk3576/yolov8-seg/rk3576-rknpu2/coco_80_labels_list.txt", "sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a", "size": 621, "executable": false}
       ]}]
@@ -75,7 +75,7 @@
         "height": {"type": "static", "flag": "--height", "default": "720"}
       },
       "variants": [{"id": "rk3576-rknpu2", "name": "RK3576 板载 NPU", "entrypoint": "yolo11_stream", "target": {"soc": "rk3576", "npu": "rk3576", "backend": "rknpu2"}, "files": [
-        {"path": "yolo11_stream", "source": "artifacts/rk3576/yolo11-detect/rk3576-rknpu2/yolo11_stream", "sha256": "20bca1e7eb307b4fb9ce317b7c633559bb7a5929029d224771cb891a83c4d5ba", "size": 248856, "executable": true},
+        {"path": "yolo11_stream", "source": "artifacts/rk3576/yolo11-detect/rk3576-rknpu2/yolo11_stream", "sha256": "db7a47634e9002f9cacb26064c1d11b34c2c46a5540a8da5578acc2876c4a0fe", "size": 248856, "executable": true},
         {"path": "weights/yolo11s.rknn", "source": "artifacts/rk3576/yolo11-detect/rk3576-rknpu2/weights/yolo11s.rknn", "sha256": "ac36cfd9132cfc9e32334b17037bc27ccb896d34e8f7c76440a3fc5b4b14b38c", "size": 14519115, "executable": false},
         {"path": "coco_80_labels_list.txt", "source": "artifacts/rk3576/yolo11-detect/rk3576-rknpu2/coco_80_labels_list.txt", "sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a", "size": 621, "executable": false}
       ]}]
