@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "20260727-01",
+  "generated_at": "2026-07-27T09:50:00Z",
+  "models": [
+    {
+      "id": "yolov8s_dfl",
+      "name": "YOLOv8s 目标检测",
+      "description": "RK3576 RKNN2 INT8，DFL16 输出，COCO 80 类。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rk3576"
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolov8s_dfl/1.0.0/yolov8s_dfl-1.0.0.tar.gz",
+        "sha256": "456b1d4d27b96299427478cc017e7e529ba5e8c4107669c6e9e7661e855e37dd",
+        "size": 10293306
+      }
+    },
+    {
+      "id": "yolo11s_detect",
+      "name": "YOLO11s 目标检测",
+      "description": "RK3576 RKNN2 INT8，DFL16 输出，COCO 80 类。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rk3576"
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolo11s_detect/1.0.0/yolo11s_detect-1.0.0.tar.gz",
+        "sha256": "889cf8b3d1ed08c6a6b6d7c286abeeeb818d9689085b25b15d87a46072efcbd6",
+        "size": 9003885
+      }
+    },
+    {
+      "id": "retinaface_detect",
+      "name": "RetinaFace 人脸检测",
+      "description": "RK3576 RKNN2 人脸框与 5 点关键点模型；阶段 3 先验证下载和安全安装。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rk3576"
+        }
+      ],
+      "runtime_ready": false,
+      "runtime_note": "等待 RetinaFace prior-box 与 landmark 后处理迁入 aigw-runtime",
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/retinaface_detect/1.0.0/retinaface_detect-1.0.0.tar.gz",
+        "sha256": "6e34409080364d0fe2fbe60548100276bf3ad0054a97580fc291ca041da3cd13",
+        "size": 561488
+      }
+    }
+  ]
+}
