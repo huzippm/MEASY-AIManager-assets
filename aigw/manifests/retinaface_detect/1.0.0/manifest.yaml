@@ -12,8 +12,8 @@ files:
     sha256: "caf90e0935a76e49939f71dde8f41efed5146cfc32da9165a068771a2b2fcb11"
     size: 1417059
 input:
-  width: 640
-  height: 640
+  width: 320
+  height: 320
   format: bgr
   resize_mode: letterbox
   padding_value: 0

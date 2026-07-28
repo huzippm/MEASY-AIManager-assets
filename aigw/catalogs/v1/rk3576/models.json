@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "20260727-01",
-  "generated_at": "2026-07-27T09:50:00Z",
+  "catalog_version": "20260728-01",
+  "generated_at": "2026-07-28T03:10:00Z",
   "models": [
     {
       "id": "yolov8s_dfl",
@@ -44,7 +44,7 @@
     {
       "id": "retinaface_detect",
       "name": "RetinaFace 人脸检测",
-      "description": "RK3576 RKNN2 人脸框与 5 点关键点模型；阶段 3 先验证下载和安全安装。",
+      "description": "RK3576 RKNN2 RetinaFace，人脸框与 5 点关键点后处理。",
       "version": "1.0.0",
       "category": "cnn_detect",
       "backend": "rknn2_local",
@@ -53,12 +53,11 @@
           "soc": "rk3576"
         }
       ],
-      "runtime_ready": false,
-      "runtime_note": "等待 RetinaFace prior-box 与 landmark 后处理迁入 aigw-runtime",
+      "runtime_ready": true,
       "package": {
         "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/retinaface_detect/1.0.0/retinaface_detect-1.0.0.tar.gz",
-        "sha256": "6e34409080364d0fe2fbe60548100276bf3ad0054a97580fc291ca041da3cd13",
-        "size": 561488
+        "sha256": "6812907ca636a580e61ec8989c70beb9d899b527a2b81b1588171ce53680f46a",
+        "size": 561489
       }
     }
   ]
