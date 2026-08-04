@@ -23,6 +23,8 @@ aigw/
 | `yolov8s_dfl` | YOLOv8s RKNN2 DFL16 | 支持 | 支持 |
 | `yolo11s_detect` | YOLO11s RKNN2 DFL16 | 支持 | 支持 |
 | `retinaface_detect` | RetinaFace RKNN2 | 支持 | 暂不支持，等待 prior-box/landmark 后处理迁移 |
+| `yolov26n` | YOLOv26n RKNN2 nms-free | 支持 | 支持 |
+| `yolov26s` | YOLOv26s RKNN2 nms-free | 支持 | 支持 |
 
 Pose 和 Seg 模型不进入本 Catalog，直到 AIResult 与 Runtime 后处理实现完成。
 

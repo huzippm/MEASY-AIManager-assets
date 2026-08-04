@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "20260728-01",
-  "generated_at": "2026-07-28T03:10:00Z",
+  "catalog_version": "20260804-01",
+  "generated_at": "2026-08-04T07:13:33Z",
   "models": [
     {
       "id": "yolov8s_dfl",
@@ -58,6 +58,44 @@
         "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/retinaface_detect/1.0.0/retinaface_detect-1.0.0.tar.gz",
         "sha256": "6812907ca636a580e61ec8989c70beb9d899b527a2b81b1588171ce53680f46a",
         "size": 561489
+      }
+    },
+    {
+      "id": "yolov26n",
+      "name": "YOLOv26n 目标检测",
+      "description": "RK3576 RKNN2 INT8，nms-free 输出，COCO 80 类，letterbox 预处理。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rk3576"
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolov26n/1.0.0/yolov26n-1.0.0.tar.gz",
+        "sha256": "750055cfd27e1ade7743e8a42a58ac80b6f4efa78b8fac75af85d7282cb1fc93",
+        "size": 2654800
+      }
+    },
+    {
+      "id": "yolov26s",
+      "name": "YOLOv26s 目标检测",
+      "description": "RK3576 RKNN2 INT8，nms-free 输出，COCO 80 类，letterbox 预处理。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rk3576"
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolov26s/1.0.0/yolov26s-1.0.0.tar.gz",
+        "sha256": "a14c439d8421e9d6c34a7008f0b1c8168391dfe0e24509e52c5384263de17312",
+        "size": 9106635
       }
     }
   ]
