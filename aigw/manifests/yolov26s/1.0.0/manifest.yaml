@@ -18,7 +18,7 @@ files:
 input:
   width: 640
   height: 640
-  format: rgb
+  format: bgr
   resize_mode: letterbox
   padding_value: 114
   mean: [0.0, 0.0, 0.0]

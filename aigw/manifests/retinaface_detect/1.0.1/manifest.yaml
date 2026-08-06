@@ -1,6 +1,6 @@
 schema_version: "1.0"
 model_id: retinaface_detect
-version: "1.0.0"
+version: "1.0.1"
 category: cnn_detect
 backend: rknn2_local
 compatible:
@@ -14,7 +14,7 @@ files:
 input:
   width: 320
   height: 320
-  format: bgr
+  format: rgb
   resize_mode: letterbox
   padding_value: 0
   mean: [0.0, 0.0, 0.0]

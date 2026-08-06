@@ -1,6 +1,6 @@
 schema_version: "1.0"
-model_id: yolov8s_dfl
-version: "1.0.0"
+model_id: yolo11s_detect
+version: "1.0.1"
 category: cnn_detect
 backend: rknn2_local
 compatible:
@@ -9,8 +9,8 @@ compatible:
 files:
   - path: model.rknn
     role: model_graph
-    sha256: "60274d34c346c1f937535f95c207e2c5de1af6de59c64accdfc71b659b8e71ba"
-    size: 14704075
+    sha256: "ac36cfd9132cfc9e32334b17037bc27ccb896d34e8f7c76440a3fc5b4b14b38c"
+    size: 14519115
   - path: labels.txt
     role: labels
     sha256: "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a"
@@ -18,7 +18,7 @@ files:
 input:
   width: 640
   height: 640
-  format: bgr
+  format: rgb
   resize_mode: letterbox
   padding_value: 114
   mean: [0.0, 0.0, 0.0]

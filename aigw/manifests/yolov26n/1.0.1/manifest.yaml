@@ -1,16 +1,16 @@
 schema_version: "1.0"
-model_id: yolov8s_dfl
-version: "1.0.0"
+model_id: yolov26n
+version: "1.0.1"
 category: cnn_detect
 backend: rknn2_local
 compatible:
   - soc: rk3576
     min_npu_driver: null
 files:
-  - path: model.rknn
+  - path: yolov26n.rknn
     role: model_graph
-    sha256: "60274d34c346c1f937535f95c207e2c5de1af6de59c64accdfc71b659b8e71ba"
-    size: 14704075
+    sha256: "afe36f8819d638eab2ce9b2d10572b28a34bc9630d465e0efc5811846626004d"
+    size: 7688052
   - path: labels.txt
     role: labels
     sha256: "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a"
@@ -18,15 +18,15 @@ files:
 input:
   width: 640
   height: 640
-  format: bgr
+  format: rgb
   resize_mode: letterbox
   padding_value: 114
   mean: [0.0, 0.0, 0.0]
   std: [255.0, 255.0, 255.0]
 postprocess:
   type: yolo_detect
-  output_layout: dfl16_regression_probabilities
+  output_layout: yolov26_nmsfree
   conf_threshold: 0.5
-  nms_threshold: 0.65
+  nms_threshold: 0.45
   num_classes: 80
   labels_file: labels.txt
