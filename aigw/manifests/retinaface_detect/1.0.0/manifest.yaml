@@ -14,7 +14,7 @@ files:
 input:
   width: 320
   height: 320
-  format: bgr
+  format: rgb
   resize_mode: letterbox
   padding_value: 0
   mean: [0.0, 0.0, 0.0]

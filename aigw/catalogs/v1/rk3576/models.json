@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "20260804-01",
-  "generated_at": "2026-08-04T07:13:33Z",
+  "catalog_version": "20260806-01",
+  "generated_at": "2026-08-06T03:20:54Z",
   "models": [
     {
       "id": "yolov8s_dfl",
@@ -18,8 +18,8 @@
       "runtime_ready": true,
       "package": {
         "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolov8s_dfl/1.0.0/yolov8s_dfl-1.0.0.tar.gz",
-        "sha256": "456b1d4d27b96299427478cc017e7e529ba5e8c4107669c6e9e7661e855e37dd",
-        "size": 10293306
+        "sha256": "87a31c02f161241807551105e3f7b1f5575e2cd388e568b9371fa53fb8d2880d",
+        "size": 10293300
       }
     },
     {
@@ -37,8 +37,8 @@
       "runtime_ready": true,
       "package": {
         "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolo11s_detect/1.0.0/yolo11s_detect-1.0.0.tar.gz",
-        "sha256": "889cf8b3d1ed08c6a6b6d7c286abeeeb818d9689085b25b15d87a46072efcbd6",
-        "size": 9003885
+        "sha256": "1b0d2d8eaec1f4fc368b8d7814cdd7b93f14661243e88b840ba74f197370850c",
+        "size": 9003891
       }
     },
     {
@@ -56,8 +56,8 @@
       "runtime_ready": true,
       "package": {
         "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/retinaface_detect/1.0.0/retinaface_detect-1.0.0.tar.gz",
-        "sha256": "6812907ca636a580e61ec8989c70beb9d899b527a2b81b1588171ce53680f46a",
-        "size": 561489
+        "sha256": "91dc4e79f3542cb66c454e1b2fffef8488d7cf984a7294c405775f1ba6387ee0",
+        "size": 561490
       }
     },
     {
@@ -75,8 +75,8 @@
       "runtime_ready": true,
       "package": {
         "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolov26n/1.0.0/yolov26n-1.0.0.tar.gz",
-        "sha256": "750055cfd27e1ade7743e8a42a58ac80b6f4efa78b8fac75af85d7282cb1fc93",
-        "size": 2654800
+        "sha256": "d2ffc411a9585a2b980df38a2c50361596993b092ea8430bbd3e5ff53b3a8a60",
+        "size": 2654799
       }
     },
     {
@@ -94,8 +94,8 @@
       "runtime_ready": true,
       "package": {
         "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3576/yolov26s/1.0.0/yolov26s-1.0.0.tar.gz",
-        "sha256": "a14c439d8421e9d6c34a7008f0b1c8168391dfe0e24509e52c5384263de17312",
-        "size": 9106635
+        "sha256": "aed8624cefaef09f0a47c16ed62708d4bf7e019f156f5392269aee70a4f77ce0",
+        "size": 9106633
       }
     }
   ]

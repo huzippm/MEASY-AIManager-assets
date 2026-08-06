@@ -28,17 +28,17 @@ aigw/
 
 Pose 和 Seg 模型不进入本 Catalog，直到 AIResult 与 Runtime 后处理实现完成。
 
-## 输入颜色审计
+## 输入颜色契约
 
-当前 YOLOv8s、YOLO11s、YOLO26n/s 的 `1.0.0` manifest 均声明 `input.format: bgr`。该字段表示
-送入 RKNN 张量的最终通道顺序，而不是 OpenCV/摄像头源格式。RK 和 Ultralytics YOLO 参考链通常
-会把 BGR 源帧转换为 RGB，因此这些历史包在发布下一版本前必须对各自实际 RKNN 工件执行同图
-RGB/BGR golden A/B，并据结果更新 manifest、包 SHA 和 Catalog 版本；禁止只原地修改已发布
-`1.0.0` 的 YAML。RetinaFace 使用独立预处理契约，不随 YOLO 批量修改。
+`input.format` 表示送入 RKNN 张量的最终通道顺序，而不是 OpenCV/摄像头源格式。Catalog 维护方已
+确认当前发布的 YOLOv8s、YOLO11s、YOLO26n/s 和 RetinaFace 工件都使用 RGB；五个 `1.0.0`
+manifest 均声明 `input.format: rgb`，Runtime 会将 BGR 源帧转换为 RGB。
 
 2026-08-06 第一轮 RK3576 `bus.jpg` A/B：YOLOv8s 的 bus 置信度 BGR/RGB 为 0.8435/0.8855，
-YOLO11s 为 0.9382/0.9459，两种颜色均检测到 5 个目标。单图趋势支持 RGB，但不足以替代多人、
-车辆和复杂颜色场景的完整 golden；完成多图对照前保持 1.0.0 不变。
+YOLO11s 为 0.9382/0.9459，两种颜色均检测到 5 个目标。2026-08-06 根据已确认输入契约修正
+manifest 后，重新打包全部五个工件，并更新 Catalog 包 SHA、大小和版本；板端 RGB 固定图回归
+覆盖 YOLOv8、YOLO26n、YOLO26s 与 YOLO26s letterbox。多人、车辆和复杂颜色场景仍需继续积累
+效果 golden，但不再使用 BGR 作为当前发布包输入。
 
 ## 发布约束
 
