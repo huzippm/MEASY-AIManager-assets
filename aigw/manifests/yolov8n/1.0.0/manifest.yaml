@@ -1,5 +1,5 @@
 schema_version: "1.0"
-model_id: yolov8n_dfl
+model_id: yolov8n
 version: "1.0.0"
 category: cnn_detect
 backend: rknn2_local

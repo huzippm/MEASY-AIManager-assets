@@ -1,6 +1,6 @@
 schema_version: "1.0"
-model_id: yolov8s_dfl
-version: "1.0.2"
+model_id: yolov8s
+version: "1.0.0"
 category: cnn_detect
 backend: rknn2_local
 compatible:

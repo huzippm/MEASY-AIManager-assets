@@ -32,13 +32,14 @@ Pose 和 Seg 模型不进入本 Catalog，直到 AIResult 与 Runtime 后处理�
 
 | model_id | 版本 | 资源 | 下载/安装 | Runtime Pipeline |
 |---|---|---|---|---|
-| `yolov8n_dfl` | `1.0.0` | YOLOv8n RKNN2 INT8，9 输出 DFL16，COCO 80 类 | 支持 | 等待 RK3588 目标板准入 |
-| `yolov8s_dfl` | `1.0.2` | YOLOv8s RKNN2 INT8，9 输出 DFL16，COCO 80 类 | 支持 | 等待 RK3588 目标板准入 |
+| `yolov8n` | `1.0.0` | YOLOv8n RKNN2 INT8，9 输出 DFL16，COCO 80 类 | 支持 | 支持 |
+| `yolov8s` | `1.0.0` | YOLOv8s RKNN2 INT8，9 输出 DFL16，COCO 80 类 | 支持 | 支持 |
 
 RK3588 Catalog 位于 `aigw/catalogs/v1/rk3588/models.json`。两份模型内嵌 target 均为 `rk3588`，
 输入为 `640×640`、RGB、letterbox，后处理为 `dfl16_regression_probabilities`。资源仓库所在的
-RK3576 参考板不能替代 RK3588 真机准入，因此首次发布保持 `runtime_ready: false`；在 RK3588
-完成 Runtime probe、固定图片 golden 和至少单路视频推理后再提升状态，不能仅凭静态元数据声明可用。
+两项 Catalog 条目均以 `runtime_ready: true` 发布，安装后可由 Web 直接创建 Pipeline。该标记表示
+模型输入/输出契约已适配当前 Runtime，不等于场景效果认证；固定图片 golden 和视频效果仍需在
+RK3588 目标板继续验证。
 
 ## 输入颜色契约
 

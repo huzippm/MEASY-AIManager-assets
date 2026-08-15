@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "20260815-01",
-  "generated_at": "2026-08-15T04:23:42Z",
+  "catalog_version": "20260815-02",
+  "generated_at": "2026-08-15T14:11:03Z",
   "models": [
     {
-      "id": "yolov8n_dfl",
+      "id": "yolov8n",
       "name": "YOLOv8n 目标检测",
       "description": "RK3588 RKNN2 INT8，9 输出 DFL16，RGB letterbox，COCO 80 类。",
       "version": "1.0.0",
@@ -16,19 +16,19 @@
           "min_npu_driver": null
         }
       ],
-      "runtime_ready": false,
-      "runtime_note": "RK3588 工件已发布，等待目标板 Runtime probe、图片 golden 与视频链验收。",
+      "runtime_ready": true,
+      "runtime_note": "已按 RK3588 RGB letterbox DFL16 契约发布；场景检测效果仍需代表性图片验证。",
       "package": {
-        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3588/yolov8n_dfl/1.0.0/yolov8n_dfl-1.0.0.tar.gz",
-        "sha256": "a1502597e6c40df0cb4f57ea2896b217c93dd73c549abce60bb532d2b766911c",
-        "size": 2959460
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3588/yolov8n/1.0.0/yolov8n-1.0.0.tar.gz",
+        "sha256": "8b73851d785c46fa6607794ba1f7d3bb187e1861c15aa906111b1bcf07f77935",
+        "size": 2959455
       }
     },
     {
-      "id": "yolov8s_dfl",
+      "id": "yolov8s",
       "name": "YOLOv8s 目标检测",
       "description": "RK3588 RKNN2 INT8，9 输出 DFL16，RGB letterbox，COCO 80 类。",
-      "version": "1.0.2",
+      "version": "1.0.0",
       "category": "cnn_detect",
       "backend": "rknn2_local",
       "compatible": [
@@ -37,12 +37,12 @@
           "min_npu_driver": null
         }
       ],
-      "runtime_ready": false,
-      "runtime_note": "RK3588 工件已发布，等待目标板 Runtime probe、图片 golden 与视频链验收。",
+      "runtime_ready": true,
+      "runtime_note": "已按 RK3588 RGB letterbox DFL16 契约发布；场景检测效果仍需代表性图片验证。",
       "package": {
-        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3588/yolov8s_dfl/1.0.2/yolov8s_dfl-1.0.2.tar.gz",
-        "sha256": "644b5615f2fd8960eda4bae98bf76015530d7f34f20096d8b16a7ce4a70f6880",
-        "size": 10091878
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rk3588/yolov8s/1.0.0/yolov8s-1.0.0.tar.gz",
+        "sha256": "73ea6374a90e5e02cdb98c592e2c46fb340ff687d3eebaf3a140665d1d5c2cdf",
+        "size": 10091879
       }
     }
   ]
