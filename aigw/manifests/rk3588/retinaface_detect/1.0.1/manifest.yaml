@@ -1,0 +1,25 @@
+schema_version: "1.0"
+model_id: retinaface_detect
+version: "1.0.1"
+category: cnn_detect
+backend: rknn2_local
+compatible:
+  - soc: rk3588
+    min_npu_driver: null
+files:
+  - path: model.rknn
+    role: model_graph
+    sha256: "e569800ee7a9ef6e85cfdf988e2d3a81e5cad4c9046f38f883f3de1e64d62f43"
+    size: 18852131
+input:
+  width: 320
+  height: 320
+  format: rgb
+  resize_mode: letterbox
+  padding_value: 0
+  mean: [0.0, 0.0, 0.0]
+  std: [255.0, 255.0, 255.0]
+postprocess:
+  type: retinaface
+  conf_threshold: 0.5
+  nms_threshold: 0.4

@@ -1,0 +1,44 @@
+schema_version: "1.0"
+model_id: construction_yolo11s
+version: "1.0.1"
+category: cnn_detect
+backend: rknn2_local
+compatible:
+  - soc: rk3588
+    min_npu_driver: null
+files:
+  - path: model.rknn
+    role: model_graph
+    sha256: "a866c06d2581c3b0925a58ef9d2bf33f3c1c5adb763822d5b4355371bdd0d8b6"
+    size: 11203399
+  - path: labels.txt
+    role: labels
+    sha256: "f8a5f120af5d179658b379d3f979a6391bcfa12b8400028c941e835bd8432cc3"
+    size: 109
+input:
+  width: 640
+  height: 640
+  format: rgb
+  resize_mode: letterbox
+  padding_value: 114
+  mean: [0.0, 0.0, 0.0]
+  std: [255.0, 255.0, 255.0]
+postprocess:
+  type: yolo_detect
+  output_layout: dfl16_regression_probabilities
+  conf_threshold: 0.25
+  nms_threshold: 0.45
+  num_classes: 11
+  labels_file: labels.txt
+semantic_labels:
+  object.person: Person
+  ppe.hardhat.present: Hardhat
+  ppe.hardhat.missing: NO-Hardhat
+  ppe.mask.present: Mask
+  ppe.mask.missing: NO-Mask
+  ppe.safety_vest.present: Safety Vest
+  ppe.safety_vest.missing: NO-Safety Vest
+  context.safety_cone: Safety Cone
+  context.machinery: machinery
+  context.utility_pole: utility pole
+  object.vehicle: vehicle
