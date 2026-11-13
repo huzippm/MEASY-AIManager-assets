@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "model_id": "retinaface_detect",
+  "version": "1.0.0",
+  "category": "cnn_detect",
+  "backend": "rknn2_local",
+  "compatible": [
+    {
+      "soc": "rv1126b",
+      "min_npu_driver": null
+    }
+  ],
+  "files": [
+    {
+      "path": "model.rknn",
+      "role": "model_graph",
+      "sha256": "2781d4d2477ba385863d1a65ac6d1cd65d65bac8bb00aef61a47eeaa117bc4e1",
+      "size": 947300
+    }
+  ],
+  "input": {
+    "width": 320,
+    "height": 320,
+    "format": "bgr",
+    "resize_mode": "letterbox",
+    "padding_value": 114
+  },
+  "postprocess": {
+    "type": "retinaface",
+    "conf_threshold": 0.5,
+    "nms_threshold": 0.5
+  }
+}

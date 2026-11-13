@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "20261113-rv1126b-01",
+  "generated_at": "2026-11-13T01:56:05Z",
+  "models": [
+    {
+      "id": "yolov8n",
+      "name": "YOLOv8n 目标检测",
+      "description": "YOLOv8n INT8 目标检测模型，支持 COCO 80 类目标，适用于 RV1126B。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rv1126b",
+          "min_npu_driver": null
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rv1126b/yolov8n/1.0.0/yolov8n-1.0.0.tar.gz",
+        "sha256": "ac365ef107c3f4088a752a78b5a4950e9d0183131e34a3b826f47660553ac4d4",
+        "size": 3041185
+      }
+    },
+    {
+      "id": "yolo11s_detect",
+      "name": "YOLO11s 目标检测",
+      "description": "YOLO11s INT8 目标检测模型，支持 COCO 80 类目标，适用于 RV1126B。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rv1126b",
+          "min_npu_driver": null
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rv1126b/yolo11s_detect/1.0.0/yolo11s_detect-1.0.0.tar.gz",
+        "sha256": "6124a2e3a64d95e39aa52e0566dfdc443309c40cb06633abde04a1a8e3c6d423",
+        "size": 8839227
+      }
+    },
+    {
+      "id": "yolov26s",
+      "name": "YOLOv26s 目标检测",
+      "description": "YOLOv26s INT8 目标检测模型，支持 COCO 80 类目标，适用于 RV1126B。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rv1126b",
+          "min_npu_driver": null
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rv1126b/yolov26s/1.0.0/yolov26s-1.0.0.tar.gz",
+        "sha256": "ea05ff26270eb5b5d65ca4054dac5e92b6d1bad757bc6d1f65be619bd4a26b96",
+        "size": 8911430
+      }
+    },
+    {
+      "id": "retinaface_detect",
+      "name": "RetinaFace 人脸检测",
+      "description": "RetinaFace INT8 人脸检测模型，输出人脸框和五点关键点，适用于 RV1126B。",
+      "version": "1.0.0",
+      "category": "cnn_detect",
+      "backend": "rknn2_local",
+      "compatible": [
+        {
+          "soc": "rv1126b",
+          "min_npu_driver": null
+        }
+      ],
+      "runtime_ready": true,
+      "package": {
+        "url": "https://raw.githubusercontent.com/huzippm/MEASY-AIManager-assets/master/aigw/packages/rv1126b/retinaface_detect/1.0.0/retinaface_detect-1.0.0.tar.gz",
+        "sha256": "22653883d3ce7a0e3bbf0d44feb52f2055968580c30e0045b7b41a0fe50c7cd9",
+        "size": 543555
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "model_id": "yolo11s_detect",
+  "version": "1.0.0",
+  "category": "cnn_detect",
+  "backend": "rknn2_local",
+  "compatible": [
+    {
+      "soc": "rv1126b",
+      "min_npu_driver": null
+    }
+  ],
+  "files": [
+    {
+      "path": "model.rknn",
+      "role": "model_graph",
+      "sha256": "703b3a2c74e4b593df0b4f316180965d6beb7e5f5cd5f86e2efff980591f5a52",
+      "size": 11341900
+    },
+    {
+      "path": "labels.txt",
+      "role": "labels",
+      "sha256": "634a1132eb33f8091d60f2c346ababe8b905ae08387037aed883953b7329af84",
+      "size": 625
+    }
+  ],
+  "input": {
+    "width": 640,
+    "height": 640,
+    "format": "rgb",
+    "resize_mode": "letterbox",
+    "padding_value": 114
+  },
+  "postprocess": {
+    "type": "yolo_detect",
+    "conf_threshold": 0.5,
+    "nms_threshold": 0.45,
+    "output_layout": "dfl16_regression_probabilities",
+    "num_classes": 80,
+    "labels_file": "labels.txt"
+  }
+}

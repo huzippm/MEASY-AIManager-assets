@@ -9,12 +9,14 @@
 aigw/
 ├── catalogs/v1/<soc>/models.json
 ├── manifests/<soc>/<model_id>/<version>/manifest.yaml
-└── packages/<soc>/<model_id>/<version>/<model_id>-<version>.tar.gz
+├── packages/<soc>/<model_id>/<version>/<model_id>-<version>.tar.gz
+└── packages/<soc>/<model_id>/<version>/<model_id>-<version>.tar.gz.sha256
 ```
 
 每个 tar.gz 的根目录只包含模型包契约允许的 `manifest.yaml`、`model.rknn`、
 `labels.txt` 等数据文件。Catalog 固定包的 HTTPS URL、大小和 SHA-256；
-包内 Manifest 再固定每个文件的 role、大小和 SHA-256。
+包内 Manifest 再固定每个文件的 role、大小和 SHA-256。同名 `.sha256` 文件记录压缩包摘要及包名，
+可在压缩包所在目录使用 `sha256sum -c <包名>.sha256` 校验。
 
 ## 阶段 3 模型
 
@@ -49,18 +51,25 @@ RK3588 Catalog 位于 `aigw/catalogs/v1/rk3588/models.json`。六份模型内嵌
 改名制造重复模型。相同 `model_id` 和版本的不同 SoC 工件分别存放在对应 `<soc>` 目录，避免审计
 Manifest 互相覆盖。
 
+## RV1126B 模型
+
+模型目录为 `aigw/catalogs/v1/rv1126b/models.json`，压缩包和审计清单分别位于
+`aigw/packages/rv1126b/` 和 `aigw/manifests/rv1126b/`。四项均为 RV1126B 专用的 RKNN2 INT8 模型，
+采用等比缩放补边（letterbox）预处理。
+
+| model_id | 版本 | 输入及输出 |
+|---|---|---|
+| `retinaface_detect` | `1.0.0` | BGR 320×320，框、分数及五点关键点 |
+| `yolov8n` | `1.0.0` | RGB 640×640，九输出 DFL16，COCO 80 类 |
+| `yolo11s_detect` | `1.0.0` | RGB 640×640，九输出 DFL16，COCO 80 类 |
+| `yolov26s` | `1.0.0` | RGB 640×640，raw6 六输出，COCO 80 类 |
+
 ## 输入颜色契约
 
-`input.format` 表示送入 RKNN 张量的最终通道顺序，而不是 OpenCV/摄像头源格式。Catalog 维护方已
-确认当前发布的 YOLOv8s、YOLO11s、YOLO26n/s 和 RetinaFace 工件都使用 RGB。首次发布的
-`1.0.0` 保持原始 BGR 契约不变；修正版 `1.0.1` manifest 声明 `input.format: rgb`，Runtime
-会将 BGR 源帧转换为 RGB。Catalog 指向 `1.0.1`，已安装 `1.0.0` 的设备会显示可更新。
-
-2026-08-06 第一轮 RK3576 `bus.jpg` A/B：YOLOv8s 的 bus 置信度 BGR/RGB 为 0.8435/0.8855，
-YOLO11s 为 0.9382/0.9459，两种颜色均检测到 5 个目标。2026-08-06 根据已确认输入契约修正
-manifest 后，以 `1.0.1` 重新打包全部五个工件，并更新 Catalog 包 SHA、大小和版本；板端 RGB 固定图回归
-覆盖 YOLOv8、YOLO26n、YOLO26s 与 YOLO26s letterbox。多人、车辆和复杂颜色场景仍需继续积累
-效果 golden，但不再使用 BGR 作为当前发布包输入。
+`input.format` 表示送入 RKNN 张量的最终通道顺序，而不是 OpenCV/摄像头源格式。
+Runtime 根据该字段处理输入：声明 `rgb` 时将 BGR 源帧转换为 RGB，声明 `bgr` 时保持 BGR。
+RV1126B 的 RetinaFace 使用 BGR，其余三项模型使用 RGB。模型的颜色、输入尺寸及缩放方式
+以对应平台、对应版本包内的 Manifest 为准，不能仅根据模型名称或其他平台的设置推断。
 
 ## 发布约束
 
